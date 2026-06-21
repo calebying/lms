@@ -1,0 +1,141 @@
+/* ─── SIT Brand Overrides for Frappe Login Page ────────────────────────────── */
+
+/* Primary button → SIT red */
+.btn-primary,
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active,
+.btn-primary.active {
+	background-color: #E31837 !important;
+	border-color: #C41430 !important;
+	color: #ffffff !important;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+	background-color: #C41430 !important;
+	border-color: #a30f27 !important;
+}
+
+/* Login page background */
+body.login-page,
+.login-content,
+.for-login {
+	background-color: #F5F5F5 !important;
+}
+
+/* Center card */
+.login-content .login-card,
+.for-login .card,
+.page-card {
+	border: 1px solid #E5E5E5;
+	border-radius: 6px;
+	box-shadow: 0 2px 12px rgba(0, 0, 0, 0.07);
+}
+
+/* Page title above the login form */
+.for-login h2,
+.login-content h2,
+.page-card h2 {
+	color: #1A1A1A;
+	font-weight: 700;
+}
+
+/* SIT header bar injected by sit-login.js */
+.sit-login-header {
+	background-color: #ffffff;
+	border-bottom: 1px solid #E5E5E5;
+	padding: 12px 24px;
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	width: 100%;
+}
+
+.sit-login-header .sit-logo-block {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+}
+
+.sit-login-header .sit-logo-box {
+	width: 36px;
+	height: 36px;
+	background: #1A1A1A;
+	border-radius: 4px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+	flex-shrink: 0;
+}
+
+.sit-login-header .sit-logo-box .sit-text {
+	color: #ffffff;
+	font-weight: 900;
+	font-size: 13px;
+	font-family: Arial, sans-serif;
+	line-height: 1;
+	letter-spacing: -0.5px;
+}
+
+.sit-login-header .sit-logo-box .sit-red-dot {
+	position: absolute;
+	bottom: 3px;
+	right: 3px;
+	width: 7px;
+	height: 7px;
+	background: #E31837;
+	border-radius: 1px;
+}
+
+.sit-login-header .sit-brand-name {
+	font-size: 15px;
+	font-weight: 700;
+	color: #1A1A1A;
+	font-family: Arial, sans-serif;
+}
+
+.sit-login-header .sit-brand-sub {
+	font-size: 11px;
+	color: #6B6B6B;
+	font-family: Arial, sans-serif;
+}
+
+/* SIT footer injected by sit-login.js */
+.sit-login-footer {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background-color: #1A1A1A;
+	color: #cccccc;
+	font-size: 12px;
+	font-family: Arial, sans-serif;
+	padding: 10px 24px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	z-index: 1000;
+}
+
+.sit-login-footer a {
+	color: #cccccc;
+	text-decoration: none;
+	margin: 0 8px;
+}
+
+.sit-login-footer a:hover {
+	color: #ffffff;
+	text-decoration: underline;
+}
+
+.sit-login-footer .sit-footer-links {
+	display: flex;
+	align-items: center;
+	gap: 4px;
+}
+
+.sit-login-footer .sit-footer-sep {
+	color: #555555;
+}

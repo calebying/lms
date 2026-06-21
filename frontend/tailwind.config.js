@@ -19,6 +19,15 @@ export default {
 				'2xl': '1600px',
 				'3xl': '1920px',
 			},
+			colors: {
+				sit: {
+					red: '#E31837',
+					black: '#1A1A1A',
+					'gray-light': '#F5F5F5',
+					'gray-mid': '#E5E5E5',
+					'gray-text': '#6B6B6B',
+				},
+			},
 		},
 	},
 	plugins: [],

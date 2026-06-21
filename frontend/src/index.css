@@ -2,6 +2,31 @@
 @import './styles/codemirror.css';
 @import './styles/blockEditor.css';
 
+/* ─── SIT Brand Tokens ─────────────────────────────────────────────────────── */
+:root {
+	--sit-red: #E31837;
+	--sit-black: #1A1A1A;
+	--sit-gray-light: #F5F5F5;
+	--sit-gray-mid: #E5E5E5;
+	--sit-gray-text: #6B6B6B;
+
+	/* Remap Frappe UI blue scale → SIT red scale */
+	--blue-50: #fff5f6;
+	--blue-100: #ffe0e4;
+	--blue-200: #ffc5cc;
+	--blue-300: #ff9aaa;
+	--blue-400: #f56070;
+	--blue-500: #E31837;
+	--blue-600: #c41430;
+	--blue-700: #a30f27;
+	--blue-800: #870b20;
+	--blue-900: #6a0819;
+	--blue-950: #4c0611;
+
+	/* Sidebar surface → SIT light gray */
+	--surface-sidebar: var(--sit-gray-light);
+}
+
 /*
  * This frappe-ui build resolves --surface-sidebar to transparent white
  * (#ffffff00) in dark mode, so the sidebar (and other bg-surface-sidebar users)

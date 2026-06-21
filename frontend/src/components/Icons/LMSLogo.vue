@@ -1,18 +1,44 @@
 <template>
+	<!-- SIT lettermark: black base square, white "SiT", red accent square -->
 	<svg
 		width="80"
-		height="79"
-		viewBox="0 0 80 79"
+		height="80"
+		viewBox="0 0 80 80"
 		fill="none"
 		xmlns="http://www.w3.org/2000/svg"
 	>
-		<path
-			d="M57.1285 0.580383H22.8514C10.2309 0.580383 0 10.5649 0 22.8815V56.3332C0 68.6497 10.2309 78.6343 22.8514 78.6343H57.1285C69.749 78.6343 79.9799 68.6497 79.9799 56.3332V22.8815C79.9799 10.5649 69.749 0.580383 57.1285 0.580383Z"
-			fill="#0E7159"
-		/>
-		<path
-			d="M62.8434 23.6906L60.7869 23.1052C53.6744 21.0702 45.9048 22.4641 39.992 26.8128C35.8502 23.7742 30.7943 22.1854 25.7099 22.2133H17.1406V27.8163H25.7099C29.6232 27.8163 33.508 29.015 36.6787 31.3845L39.992 33.8377L43.3056 31.3845C47.2475 28.4575 52.3032 27.2588 57.1306 28.0393V50.647C51.1035 49.9223 44.9051 51.4834 39.992 55.0795C35.8502 52.0688 30.8515 50.4798 25.7671 50.4798C24.7959 50.4798 23.8247 50.5355 22.8535 50.647V35.0642H17.1406V57.0588H62.8434V23.7185V23.6906Z"
+		<!-- Black base -->
+		<rect width="80" height="80" rx="4" fill="#1A1A1A" />
+		<!-- Red accent square bottom-right -->
+		<rect x="52" y="52" width="20" height="20" rx="2" fill="#E31837" />
+		<!-- "S" -->
+		<text
+			x="8"
+			y="52"
+			font-family="Arial, Helvetica, sans-serif"
+			font-weight="900"
+			font-size="46"
 			fill="white"
-		/>
+			letter-spacing="-2"
+		>SiT</text>
+		<!-- "SINGAPORE INSTITUTE OF TECHNOLOGY" micro-text -->
+		<text
+			x="8"
+			y="66"
+			font-family="Arial, Helvetica, sans-serif"
+			font-weight="400"
+			font-size="6"
+			fill="#cccccc"
+			letter-spacing="0.3"
+		>SINGAPORE INSTITUTE</text>
+		<text
+			x="8"
+			y="74"
+			font-family="Arial, Helvetica, sans-serif"
+			font-weight="400"
+			font-size="6"
+			fill="#cccccc"
+			letter-spacing="0.3"
+		>OF TECHNOLOGY</text>
 	</svg>
 </template>
