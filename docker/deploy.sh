@@ -9,7 +9,10 @@ set -e
 
 COMPOSE_DIR="/opt/frappe-lms"
 SRC_DIR="$COMPOSE_DIR/src"
-APP_PATH="/home/frappe/frappe-persist/apps/lms"
+# frappe-bench is the ACTIVE bench dir (real directory, not a symlink);
+# frappe-persist is the Docker volume — sync both so changes survive restarts.
+APP_PATH="/home/frappe/frappe-bench/apps/lms"
+APP_PATH_PERSIST="/home/frappe/frappe-persist/apps/lms"
 SITE="lms.localhost"
 BRANCH="${1:-SIT-UI}"
 SERVICE="frappe"
@@ -24,20 +27,22 @@ cd "$COMPOSE_DIR"
 
 # ── 1. Verify container is running ────────────────────────────────────────
 log "Checking container status..."
-docker compose ps "$SERVICE" | grep -q "running" \
+docker compose ps "$SERVICE" | grep -q "Up" \
   || die "Container '$SERVICE' is not running. Run: sudo docker compose up -d"
 
 # ── 2. Copy source files into container ───────────────────────────────────
 if [ -d "$SRC_DIR/lms" ]; then
-  log "Syncing lms/ into container..."
+  log "Syncing lms/ into container (bench + persist)..."
   docker compose cp "$SRC_DIR/lms/." "$SERVICE:$APP_PATH/lms/"
+  docker compose cp "$SRC_DIR/lms/." "$SERVICE:$APP_PATH_PERSIST/lms/" 2>/dev/null || true
 else
   warn "No lms/ dir in $SRC_DIR — skipping Python app sync"
 fi
 
 if [ -d "$SRC_DIR/frontend" ]; then
-  log "Syncing frontend/ into container..."
+  log "Syncing frontend/ into container (bench + persist)..."
   docker compose cp "$SRC_DIR/frontend/." "$SERVICE:$APP_PATH/frontend/"
+  docker compose cp "$SRC_DIR/frontend/." "$SERVICE:$APP_PATH_PERSIST/frontend/" 2>/dev/null || true
 else
   warn "No frontend/ dir in $SRC_DIR — skipping frontend sync"
 fi

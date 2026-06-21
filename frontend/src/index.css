@@ -9,8 +9,17 @@
 	--sit-gray-light: #F5F5F5;
 	--sit-gray-mid: #E5E5E5;
 	--sit-gray-text: #6B6B6B;
+}
 
-	/* Remap Frappe UI blue scale → SIT red scale */
+/*
+ * Remap Frappe UI's blue accent scale → SIT crimson.
+ * Must be scoped to [data-theme] to win over frappe-ui's own
+ * [data-theme="light"] definitions (attribute selector > :root specificity).
+ */
+[data-theme='light'],
+[data-theme='dark'],
+:root {
+	/* blue scale → SIT red */
 	--blue-50: #fff5f6;
 	--blue-100: #ffe0e4;
 	--blue-200: #ffc5cc;
